@@ -14,7 +14,7 @@ install:
 script:
   - docker build -t friendlyhello .
   - docker images
-  - docker run -d -p 4000:80 friendlyhello
+  - docker run -d -p 127.0.0.1:80:4000 friendlyhello
   - ./init.sh
   - py.test # or py.test for Python versions 3.5 and below
   - docker ps
