@@ -1,3 +1,3 @@
 #!/bin/bash
 # docker run -it ubuntu bash
-docker build -t friendlyhello . 
+docker build -t friendlyhello . ; docker images 
