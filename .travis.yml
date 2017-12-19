@@ -12,9 +12,13 @@ install:
 # command to run tests
 
 script:
+  - docker build -t friendlyhello .
+  - docker images
+  - docker run -d -p 4000:80 friendlyhello
   - ./init.sh
   - py.test # or py.test for Python versions 3.5 and below
   - docker ps
+  - docker ps -a
   - docker ps | grep -q friendlyhello
   - curl http://localhost:4000
   - curl http://localhost:80
