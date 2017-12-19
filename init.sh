@@ -1,3 +1,3 @@
 #!/bin/bash
 # docker run -it ubuntu bash
-docker build -t friendlyhello . ; docker images ; docker run -d -p 4000:80 friendlyhello ; sleep 10 ; docker container ls ; docker-machine ls ; docker-machine ip ; curl http://localhost:4000
+docker build -t friendlyhello . ; docker images ; docker run -d -p 4000:80 friendlyhello ; sleep 10 ; docker container ls ; curl http://127.0.0.1:80:4000
