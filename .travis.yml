@@ -12,16 +12,8 @@ install:
 # command to run tests
 
 script:
-  - docker build -t friendlyhello .
-  - docker images
-  - docker run -d -p 127.0.0.1:4000:80 friendlyhello
-  # - ./init.sh
-  # - py.test # or py.test for Python versions 3.5 and below
-  # - docker container ls
+  - docker-compose -f docker-compose.yml build
+  - docker-compose -f docker-compose.yml up -d
   - docker ps
   - docker ps -a
-  # - docker ps | grep -q friendlyhello
-  - docker ps -a | grep friendlyhello | awk '{print $1}'
-  - docker ps | tail -n +2 | awk '{print $NF}'
-  `- curl http://127.0.0.1:4000
-  # - curl http://localhost:8080
+  - curl http://localhost:8080
