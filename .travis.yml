@@ -16,4 +16,4 @@ script:
   - docker-compose -f docker-compose.yml up -d
   - docker ps
   - docker ps -a
-  - curl http://localhost:8080
+  - curl http://localhost:80
