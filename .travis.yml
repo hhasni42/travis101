@@ -26,5 +26,5 @@ script:
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -a | grep friendlyhello | awk '{print $1}')
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps | tail -n +2 | awk '{print $NF}')
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -a | grep friendlyhello | awk '{print $14}')
-  - curl http://localhost:4000
+  - curl http://127.0.0.1:4000
   # - curl http://localhost:8080
