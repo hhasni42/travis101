@@ -23,7 +23,7 @@ script:
   # - docker ps | grep -q friendlyhello
   - docker ps -a | grep friendlyhello | awk '{print $14}'
   - docker ps | tail -n +2 | awk '{print $NF}'
-  - docker inspect --format '{{ .NetworkSettings.IPAddress }}' docker ps | tail -n +2 | awk '{print $NF}'
-  - docker inspect --format '{{ .NetworkSettings.IPAddress }}' docker ps -a | grep friendlyhello | awk '{print $14}'
+  - docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps | tail -n +2 | awk '{print $NF}')
+  - docker inspect --format '{{ .NetworkSettings.IPAddress }}' $(docker ps -a | grep friendlyhello | awk '{print $14}')
   - curl http://localhost:4000
   # - curl http://localhost:8080
