@@ -21,6 +21,10 @@ script:
   - docker ps
   - docker ps -a
   # - docker ps | grep -q friendlyhello
+  - docker ps -a | grep friendlyhello | awk '{print $14}'
+  - docker ps -a | grep friendlyhello | awk '{print $15}'
+  - docker ps -a | grep friendlyhello | awk '{print $16}'
+  - docker ps -a | grep friendlyhello | awk '{print $17}'
   - docker ps -a | grep friendlyhello | awk '{print $18}'
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' docker ps -a | grep friendlyhello | awk '{print $14}'
   - curl http://localhost:4000
