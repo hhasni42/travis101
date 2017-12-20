@@ -18,5 +18,5 @@ script:
   - docker ps -a
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' travis101_web_1
   - docker inspect --format '{{ .NetworkSettings.IPAddress }}' travis101_redis_1
-  - curl $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' travis101_redis_1):80
+  - curl $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' travis101_redis_1)
   - curl http://localhost:80
